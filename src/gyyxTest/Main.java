@@ -17,25 +17,27 @@ public class Main {
 //		System.out.println("hello "+a);
 		char[] input=a.toCharArray();
 		Vector<Character> res=new Vector<Character>();
-		Vector<Character> vector=new Vector<Character>();
-		for(int i=0;i<a.length();i++){
-			boolean flag=true;
-			for(Character c:vector){
-				if(c==input[i]){
-					flag=false;
-					break;
+		for(int j=0;j<a.length();j++){
+			Vector<Character> vector=new Vector<Character>();
+			for(int i=j;i<a.length();i++){
+				boolean flag=true;
+				for(Character c:vector){
+					if(c==input[i]){
+						flag=false;
+						break;
+					}
 				}
-			}
-			if(flag){
-				vector.add(input[i]);
-			}
-			else {
-				if(vector.size()>res.size())
-				{
-					res=new Vector<Character>();
-					for(Character character : vector)
-						res.add(character);
-					vector=new Vector<Character>();
+				if(flag){
+					vector.add(input[i]);
+				}
+				else {
+					if(vector.size()>res.size())
+					{
+						res=new Vector<Character>();
+						for(Character character : vector)
+							res.add(character);
+						vector=new Vector<Character>();
+					}
 				}
 			}
 		}
