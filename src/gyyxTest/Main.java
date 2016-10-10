@@ -14,7 +14,7 @@ public class Main {
 	}
 	static void func(String a)
 	{
-//		System.out.println("hello "+a);
+		int max=0;
 		char[] input=a.toCharArray();
 		Vector<Character> res=new Vector<Character>();
 		for(int j=0;j<a.length();j++){
@@ -24,21 +24,20 @@ public class Main {
 				for(Character c:vector){
 					if(c==input[i]){
 						flag=false;
-						break;
 					}
 				}
-				if(flag){
+				if(flag&&i!=a.length()-1){
 					vector.add(input[i]);
 				}
 				else {
-					if(vector.size()>res.size())
+					if(vector.size()>max)
 					{
 						res=new Vector<Character>();
 						for(Character character : vector)
 							res.add(character);
-						vector=new Vector<Character>();
-						break;
+						max=vector.size();
 					}
+					break;
 				}
 			}
 		}
