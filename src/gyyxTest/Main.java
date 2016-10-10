@@ -37,6 +37,7 @@ public class Main {
 						for(Character character : vector)
 							res.add(character);
 						vector=new Vector<Character>();
+						break;
 					}
 				}
 			}
@@ -44,6 +45,7 @@ public class Main {
 		for (Character character : res) {
 			System.out.print(character);
 		}
+		System.out.println(" "+res.size());
 	}
 
 }
