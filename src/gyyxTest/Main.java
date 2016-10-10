@@ -29,6 +29,17 @@ public class Main {
 				if(flag&&i!=a.length()-1){
 					vector.add(input[i]);
 				}
+				else if(flag&&i==a.length()-1){
+					vector.add(input[i]);
+					if(vector.size()>max)
+					{
+						res=new Vector<Character>();
+						for(Character character : vector)
+							res.add(character);
+						max=vector.size();
+					}
+					break;
+				}
 				else {
 					if(vector.size()>max)
 					{
