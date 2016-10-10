@@ -17,8 +17,8 @@ public class Main {
 //		System.out.println("hello "+a);
 		char[] input=a.toCharArray();
 		Vector<Character> res=new Vector<Character>();
+		Vector<Character> vector=new Vector<Character>();
 		for(int i=0;i<a.length();i++){
-			Vector<Character> vector=new Vector<Character>();
 			boolean flag=true;
 			for(Character c:vector){
 				if(c==input[i]){
@@ -35,6 +35,7 @@ public class Main {
 					res=new Vector<Character>();
 					for(Character character : vector)
 						res.add(character);
+					vector=new Vector<Character>();
 				}
 			}
 		}
